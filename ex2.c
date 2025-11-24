@@ -42,11 +42,38 @@ int main()
         
                 break;
             
-
             case 2:
-
+                int numDucks;
+                printf("please enter the number of ducks:\n");
+                scanf("%d", &numDucks);
+                while (numDucks <= 0) {
+                    printf("Invalid number, please try again\n");
+                    scanf("%d", &numDucks);
+                }
+                printf("you entered %d ducks\n", numDucks);
+                long long ducks=0; //store all the sounds here
+                for (int i = 0; i < numDucks; i++) {
+                    int sound;
+                    printf("duck %d do QUAK? 1 for yes, 0 for no\n", i + 1);
+                    scanf("%d", &sound);
+                    while (sound != 0 && sound != 1) {
+                        printf("Invalid number, please try again\n");
+                        scanf("%d", &sound);
+                    }
+                    if (sound == 1) {
+                        ducks = ducks | (1 << i);  //set bit i to 1, if 0 stay 0
+                    }
+                }
+                for (int i = 0; i < numDucks; i++) {
+                    if ((ducks & (1 << i)) != 0) {      //Check if bit i is 1
+                        printf("duck number %d do Quak\n", i + 1);
+                    }
+                    else {
+                        printf("duck number %d do Sh...\n", i + 1);
+                    }
+                }  
+                    
                 break;
-
 
             case 3:
 
