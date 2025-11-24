@@ -105,10 +105,51 @@ int main()
                 printf("your power is: %d\n", sum);
                 break;
 
-            case 4:
+            case 4: 
+                int duckCount;
+                printf("please enter number of ducks:\n");
+                scanf("%d", &duckCount);
+
+                while (duckCount < 0) {
+                    printf("Invalid number, please try again\n");
+                    scanf("%d", &duckCount);
+                }
+
+                if (duckCount == 0) {
+                    break;
+                }
+
+                int remaining = duckCount;
+
+                while (remaining > 0) {
+                // How many ducks in this row?
+                    int inThisRow = remaining;
+                    if (inThisRow > 10) {
+                        inThisRow = 10;
+                    }
+    
+                    //Line 1
+                    for (int i = 0; i < inThisRow; i++) {
+                        printf("   _\t\t");
+                    }
+                    printf("\n");
+    
+                    //Line 2
+                    for (int i = 0; i < inThisRow; i++) {
+                        printf("__(o)>\t\t");
+                    }
+                    printf("\n");
+    
+                    //Line 3
+                    for (int i = 0; i < inThisRow; i++) {
+                        printf("\\___)\t\t");
+                    }
+                    printf("\n");
+    
+                    remaining = remaining - inThisRow;
+                }           
 
                 break;
-
 
             case 5:
 
