@@ -152,9 +152,28 @@ int main()
                 break;
 
             case 5:
+                int num2;
+                printf("please enter number\n");
+                scanf("%d", &num2);
+
+                while (num2 <= 0) {
+                    printf("Invalid number, please try again\n");
+                    scanf("%d", &num2);
+                }
+                while (num2 != 0) { //32232
+                    int LSB = num2%10;
+                    int num3 = num2/10;
+                    while (num3 != 0) {
+                        if (num3%10 == LSB) {
+                            printf("%d appears more than once!\n", LSB);
+                            break;
+                        }
+                        num3 = num3/10;
+                    }
+                    num2 = num2/10;
+                }
 
                 break;
-
 
             case 6:
                 printf("Good night! See you at the pond tomorrow.");
@@ -167,8 +186,6 @@ int main()
         }   
     
     }  
-
-
 
 
     return 0;
