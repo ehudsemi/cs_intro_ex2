@@ -76,9 +76,34 @@ int main()
                 break;
 
             case 3:
-
+                int number;
+                printf("please enter the number\n");
+                scanf("%d", &number);
+                while (number < 0) {
+                    printf("Invalid number, please try again\n");
+                    scanf("%d", &number);
+                }
+                int exponent;
+                printf("please enter the exponent\n");
+                scanf("%d", &exponent);
+                while (exponent < 0) {
+                    printf("Invalid number, please try again\n");
+                    scanf("%d", &exponent);
+                }
+                if (exponent == 0) {
+                    printf("your power is: %d\n", 1);
+                    break;
+                }
+                if (number == 0) {
+                    printf("your power is: %d\n", 0);
+                    break;
+                }
+                int sum=number;
+                for (int i=1; i<exponent; i++) {
+                    sum = sum * number;
+                }
+                printf("your power is: %d\n", sum);
                 break;
-
 
             case 4:
 
